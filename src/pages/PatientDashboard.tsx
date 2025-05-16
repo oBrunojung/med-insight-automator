@@ -9,33 +9,34 @@ import { StatsCard } from '@/components/dashboard/StatsCard';
 import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell, PieChart, Pie, Legend } from 'recharts';
 
-// Sample patient data
+// Roseli's data
 const currentPatient = {
   id: 'P-12345',
-  name: 'Jane Doe',
-  age: 42,
-  gender: 'Female',
+  name: 'Roseli Aparecida Goncalves Brombim',
+  age: 68,
+  gender: 'Feminino',
   avatarUrl: '',
   riskLevel: 'medium',
   lastUpdate: '2023-05-10',
-  summary: 'Patient shows moderate metabolic dysfunction with signs of insulin resistance. Microbiota diversity is below optimal levels.'
+  summary: 'Paciente apresenta disbiose intestinal leve e risco aumentado para diabetes tipo 1. Baixa diversidade microbiana com redução da relação Bacteroidetes para Firmicutes.'
 };
 
 // Sample lab data
 const labData = [
-  { date: 'Jan', glucose: 105, cholesterol: 190, reference: 100 },
-  { date: 'Feb', glucose: 110, cholesterol: 185, reference: 100 },
-  { date: 'Mar', glucose: 108, cholesterol: 195, reference: 100 },
-  { date: 'Apr', glucose: 115, cholesterol: 210, reference: 100 },
-  { date: 'May', glucose: 118, cholesterol: 215, reference: 100 },
+  { date: 'Jan', glucose: 95, cholesterol: 190, reference: 100 },
+  { date: 'Fev', glucose: 97, cholesterol: 185, reference: 100 },
+  { date: 'Mar', glucose: 96, cholesterol: 195, reference: 100 },
+  { date: 'Abr', glucose: 98, cholesterol: 188, reference: 100 },
+  { date: 'Mai', glucose: 96, cholesterol: 192, reference: 100 },
 ];
 
 // Sample genetic risk data
 const geneticData = [
-  { name: 'Cardiovascular', risk: 65 },
-  { name: 'Metabolic', risk: 40 },
-  { name: 'Inflammatory', risk: 25 },
-  { name: 'Autoimmune', risk: 15 },
+  { name: 'Cardiovascular', risk: 50 },
+  { name: 'Diabetes Tipo 1', risk: 75 },
+  { name: 'Diabetes Tipo 2', risk: 50 },
+  { name: 'Hipertensão', risk: 25 },
+  { name: 'Obesidade', risk: 25 },
 ];
 
 // Sample microbiota data
@@ -49,32 +50,32 @@ const microbiotaData = [
 
 // Sample metabolic pathways data
 const metabolicData = [
-  { name: 'Glycolysis', efficiency: 80 },
-  { name: 'Krebs Cycle', efficiency: 65 },
-  { name: 'Fat Metabolism', efficiency: 55 },
-  { name: 'Protein Metabolism', efficiency: 75 },
-  { name: 'Energy Production', efficiency: 60 },
+  { name: 'Glycolysis', efficiency: 75 },
+  { name: 'Krebs Cycle', efficiency: 82 },
+  { name: 'Fat Metabolism', efficiency: 72 },
+  { name: 'Protein Metabolism', efficiency: 85 },
+  { name: 'Energy Production', efficiency: 78 },
 ];
 
 // Sample insights
 const insights = [
   { 
-    title: 'Metabolic Imbalance', 
-    description: 'Glucose levels trending upward over last 3 months, indicating potential insulin resistance.',
-    recommendation: 'Consider low glycemic index diet and increased physical activity.',
+    title: 'Intolerância Alimentar', 
+    description: 'Presença de intolerância à lactose e ao glúten, podendo contribuir para inflamação intestinal.',
+    recommendation: 'Recomenda-se dieta de eliminação para confirmar sensibilidades e suplementação probiótica.',
     severity: 'medium'
   },
   { 
-    title: 'Microbiota Dysbiosis', 
-    description: 'Reduced diversity in gut flora with decreased Bacteroidetes to Firmicutes ratio.',
-    recommendation: 'Recommend probiotic supplementation and increased fiber intake.',
+    title: 'Disbiose Intestinal', 
+    description: 'Redução da diversidade da flora intestinal com diminuição da relação Bacteroidetes para Firmicutes.',
+    recommendation: 'Indicada suplementação probiótica e aumento da ingestão de fibras solúveis.',
+    severity: 'low'
+  },
+  { 
+    title: 'Risco Diabetes Tipo 1', 
+    description: 'Marcadores genéticos indicam risco elevado para diabetes tipo 1, com glicemia de jejum controlada no momento.',
+    recommendation: 'Monitoramento regular da glicemia e avaliação de autoanticorpos pancreáticos.',
     severity: 'high'
-  },
-  { 
-    title: 'Cardiovascular Risk', 
-    description: 'Genetic markers indicate elevated risk for cardiovascular issues, supported by rising cholesterol.',
-    recommendation: 'Monitor lipid profile closely and consider preventative measures.',
-    severity: 'medium'
   },
 ];
 

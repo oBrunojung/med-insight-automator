@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { PatientData } from '@/components/patients/PatientData';
+import { useNavigate } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
 
 // Sample patient data matching the structure from the JSON
 const patientData = {
@@ -93,10 +95,21 @@ const patientData = {
 };
 
 const Patients = () => {
+  const navigate = useNavigate();
+
+  const viewPatientDashboard = () => {
+    navigate('/patient-dashboard');
+  };
+
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">Patient Records</h1>
+      <h1 className="text-2xl font-bold mb-6">Ficha do Paciente</h1>
       <PatientData patients={patientData.patients} />
+      <div className="mt-6 flex justify-end">
+        <Button onClick={viewPatientDashboard}>
+          Ver Dashboard Completo
+        </Button>
+      </div>
     </div>
   );
 };
