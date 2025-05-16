@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import PatientDashboard from "./pages/PatientDashboard";
 import NotFound from "./pages/NotFound";
 import Patients from "./pages/Patients";
+import Webhooks from "./pages/Webhooks";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<AppLayout children={<Dashboard />} />} />
           <Route path="/patient-dashboard" element={<AppLayout children={<PatientDashboard />} />} />
           <Route path="/patients" element={<AppLayout children={<Patients />} />} />
+          <Route path="/webhooks" element={<AppLayout children={<Webhooks />} />} />
           <Route path="/exams" element={<AppLayout children={<ComingSoon title="Exams" />} />} />
           <Route path="/exams/:category" element={<AppLayout children={<ComingSoon title="Exam Category" />} />} />
           <Route path="*" element={<NotFound />} />
