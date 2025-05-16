@@ -7,8 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppLayout } from "./components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import PatientDashboard from "./pages/PatientDashboard";
-import Integration from "./pages/Integration";
-import Documentation from "./pages/Documentation";
 import NotFound from "./pages/NotFound";
 import Patients from "./pages/Patients";
 
@@ -22,13 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout children={<Dashboard />} />} />
-          <Route path="/integration" element={<AppLayout children={<Integration />} />} />
-          <Route path="/documentation" element={<AppLayout children={<Documentation />} />} />
           <Route path="/patient-dashboard" element={<AppLayout children={<PatientDashboard />} />} />
           <Route path="/patients" element={<AppLayout children={<Patients />} />} />
           <Route path="/exams" element={<AppLayout children={<ComingSoon title="Exams" />} />} />
           <Route path="/exams/:category" element={<AppLayout children={<ComingSoon title="Exam Category" />} />} />
-          <Route path="/settings" element={<AppLayout children={<ComingSoon title="Settings" />} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

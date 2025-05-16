@@ -1,17 +1,13 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import {
   LayoutDashboard,
   FileText,
-  Database,
-  Settings,
-  ChevronLeft,
-  ChevronRight,
   Users,
-  BookOpen,
   Search,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -22,50 +18,14 @@ type SidebarProps = {
   setCollapsed: (collapsed: boolean) => void;
 };
 
-// Sample patient data
+// Sample patient data - replacing with only Roseli
 const patients = [
   { 
     id: 'P-12345', 
-    name: 'Jane Doe', 
+    name: 'Roseli Aparecida Goncalves Brombim', 
     lastExam: '2023-05-10', 
     risk: 'medium' 
-  },
-  { 
-    id: 'P-23456', 
-    name: 'John Smith', 
-    lastExam: '2023-05-08', 
-    risk: 'high' 
-  },
-  { 
-    id: 'P-34567', 
-    name: 'Alice Johnson', 
-    lastExam: '2023-05-05', 
-    risk: 'low' 
-  },
-  { 
-    id: 'P-45678', 
-    name: 'Bob Brown', 
-    lastExam: '2023-05-03', 
-    risk: 'medium' 
-  },
-  { 
-    id: 'P-56789', 
-    name: 'Emma Wilson', 
-    lastExam: '2023-04-28', 
-    risk: 'high' 
-  },
-  { 
-    id: 'P-67890', 
-    name: 'Michael Lee', 
-    lastExam: '2023-04-25', 
-    risk: 'low' 
-  },
-  { 
-    id: 'P-78901', 
-    name: 'Sarah Miller', 
-    lastExam: '2023-04-20', 
-    risk: 'medium' 
-  },
+  }
 ];
 
 export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
@@ -118,14 +78,11 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
         )}
       </div>
       
-      {/* Main Navigation */}
+      {/* Main Navigation - removed Integration, Documentation, Settings */}
       <div className="flex flex-col gap-1 p-2">
         <NavItem collapsed={collapsed} icon={LayoutDashboard} to="/" label="Dashboard" />
         <NavItem collapsed={collapsed} icon={Users} to="/patients" label="Patients" />
         <NavItem collapsed={collapsed} icon={FileText} to="/patient-dashboard" label="Patient View" />
-        <NavItem collapsed={collapsed} icon={Database} to="/integration" label="Integration" />
-        <NavItem collapsed={collapsed} icon={BookOpen} to="/documentation" label="Documentation" />
-        <NavItem collapsed={collapsed} icon={Settings} to="/settings" label="Settings" />
       </div>
       
       {/* Patient List Section */}
@@ -187,6 +144,7 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
   );
 }
 
+// Keep the NavItem component the same
 type NavItemProps = {
   collapsed: boolean;
   icon: React.ElementType;

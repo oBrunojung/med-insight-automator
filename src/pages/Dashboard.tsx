@@ -14,36 +14,12 @@ import {
   Beaker
 } from 'lucide-react';
 
-// Sample data for demonstration
+// Updated sample data for Roseli
 const samplePatients = [
   {
     id: '1',
-    name: 'John Doe',
+    name: 'Roseli Aparecida Goncalves Brombim',
     lastExam: new Date(2023, 4, 15),
-    examCount: 3,
-    exams: {
-      metabolic: true,
-      microbiota: false,
-      genetic: true,
-      laboratory: true,
-    },
-  },
-  {
-    id: '2',
-    name: 'Jane Smith',
-    lastExam: new Date(2023, 4, 10),
-    examCount: 2,
-    exams: {
-      metabolic: false,
-      microbiota: true,
-      genetic: true,
-      laboratory: false,
-    },
-  },
-  {
-    id: '3',
-    name: 'Alice Johnson',
-    lastExam: new Date(2023, 4, 5),
     examCount: 4,
     exams: {
       metabolic: true,
@@ -51,7 +27,7 @@ const samplePatients = [
       genetic: true,
       laboratory: true,
     },
-  },
+  }
 ];
 
 export default function Dashboard() {
@@ -67,25 +43,23 @@ export default function Dashboard() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <StatsCard
           title="Total Patients"
-          value="27"
+          value="1"
           icon={<Users className="h-4 w-4" />}
-          trend={{ value: 12, positive: true }}
         />
         <StatsCard
           title="Total Exams"
-          value="94"
+          value="4"
           icon={<FileText className="h-4 w-4" />}
-          trend={{ value: 8, positive: true }}
         />
         <StatsCard
           title="Pending Insights"
-          value="5"
+          value="2"
           icon={<AlertCircle className="h-4 w-4" />}
         />
         <StatsCard
-          title="Notion Sync"
-          value="Active"
-          description="Last sync: 2 hours ago"
+          title="Last Update"
+          value="May 15, 2023"
+          description="Patient: Roseli A. G. Brombim"
           icon={<FlaskConical className="h-4 w-4" />}
         />
       </div>
@@ -95,28 +69,28 @@ export default function Dashboard() {
           category="metabolic"
           title="Metabolic Exams"
           description="Metabolomic analysis for nutritional deficiencies"
-          count={34}
+          count={1}
           icon={<Activity className="h-4 w-4" />}
         />
         <ExamCategoryCard
           category="microbiota"
           title="Microbiota Exams"
           description="Gut microbiome analysis and diversity assessments"
-          count={28}
+          count={1}
           icon={<Bug className="h-4 w-4" />}
         />
         <ExamCategoryCard
           category="genetic"
           title="Genetic Exams"
           description="SNP analysis for genetic risk factors"
-          count={15}
+          count={1}
           icon={<Dna className="h-4 w-4" />}
         />
         <ExamCategoryCard
           category="laboratory"
           title="Laboratory Exams"
           description="Standard clinical laboratory tests"
-          count={17}
+          count={1}
           icon={<Beaker className="h-4 w-4" />}
         />
       </div>
@@ -124,13 +98,22 @@ export default function Dashboard() {
       <div className="grid gap-4 md:grid-cols-2">
         <RecentPatientsList patients={samplePatients} />
         
-        {/* Placeholder for insights component - would be expanded in future iterations */}
-        <div className="border rounded-lg h-[400px] flex items-center justify-center bg-muted/10">
-          <div className="text-center p-6">
-            <h3 className="text-lg font-medium mb-2">Recent Insights</h3>
-            <p className="text-muted-foreground">
-              Insights visualization will appear here based on collected data
-            </p>
+        {/* Insights panel with Roseli's specific data */}
+        <div className="border rounded-lg p-4">
+          <h3 className="text-lg font-medium mb-3">Recent Insights</h3>
+          <div className="space-y-3">
+            <div className="p-3 border-l-4 border-l-yellow-500 bg-yellow-50 rounded">
+              <h4 className="font-medium">Intolerância à Lactose e Glúten</h4>
+              <p className="text-sm text-muted-foreground">Confirmados geneticamente, com potencial para inflamação intestinal.</p>
+            </div>
+            <div className="p-3 border-l-4 border-l-red-500 bg-red-50 rounded">
+              <h4 className="font-medium">Risco Elevado para Diabetes Tipo 1</h4>
+              <p className="text-sm text-muted-foreground">Recomendado monitoramento regular da glicemia.</p>
+            </div>
+            <div className="p-3 border-l-4 border-l-green-500 bg-green-50 rounded">
+              <h4 className="font-medium">Disbiose Intestinal Leve</h4>
+              <p className="text-sm text-muted-foreground">Sugerido aumento de probióticos e ingestão de fibras.</p>
+            </div>
           </div>
         </div>
       </div>
