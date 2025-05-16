@@ -10,6 +10,7 @@ import PatientDashboard from "./pages/PatientDashboard";
 import Integration from "./pages/Integration";
 import Documentation from "./pages/Documentation";
 import NotFound from "./pages/NotFound";
+import Patients from "./pages/Patients";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,7 @@ const App = () => (
           <Route path="/integration" element={<AppLayout children={<Integration />} />} />
           <Route path="/documentation" element={<AppLayout children={<Documentation />} />} />
           <Route path="/patient-dashboard" element={<AppLayout children={<PatientDashboard />} />} />
-          <Route path="/patients" element={<AppLayout children={<ComingSoon title="Patients" />} />} />
+          <Route path="/patients" element={<AppLayout children={<Patients />} />} />
           <Route path="/exams" element={<AppLayout children={<ComingSoon title="Exams" />} />} />
           <Route path="/exams/:category" element={<AppLayout children={<ComingSoon title="Exam Category" />} />} />
           <Route path="/settings" element={<AppLayout children={<ComingSoon title="Settings" />} />} />

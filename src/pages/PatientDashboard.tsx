@@ -6,22 +6,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Activity, Dna, Bug, Beaker, FileText, Download, Info, CircleArrowDown, CircleArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StatsCard } from '@/components/dashboard/StatsCard';
-import { Chart as ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell, PieChart, Pie, Legend } from 'recharts';
 
-type Patient = {
-  id: string;
-  name: string;
-  age: number;
-  gender: string;
-  avatarUrl: string;
-  riskLevel: 'low' | 'medium' | 'high';
-  lastUpdate: string;
-  summary: string;
-};
-
 // Sample patient data
-const currentPatient: Patient = {
+const currentPatient = {
   id: 'P-12345',
   name: 'Jane Doe',
   age: 42,
@@ -413,7 +402,7 @@ export default function PatientDashboard() {
                   <CardContent>
                     <div className="flex items-center justify-between">
                       <div className="text-2xl font-bold">6.8</div>
-                      <div className="text-sm text-muted-foreground">(Reference: >7.5)</div>
+                      <div className="text-sm text-muted-foreground">(Reference: &gt;7.5)</div>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2.5 mt-2">
                       <div className="bg-yellow-500 h-2.5 rounded-full" style={{ width: '65%' }}></div>
